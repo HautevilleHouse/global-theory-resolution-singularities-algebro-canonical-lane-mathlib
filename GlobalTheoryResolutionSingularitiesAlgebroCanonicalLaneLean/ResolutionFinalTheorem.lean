@@ -1,0 +1,18 @@
+import canonicalLaneMathlib.AdmissibleClass
+import GlobalTheoryResolutionSingularitiesAlgebroCanonicalLaneLean.BlowupEmbedding
+import GlobalTheoryResolutionSingularitiesAlgebroCanonicalLaneLean.CanonicalSingularityStratification
+import GlobalTheoryResolutionSingularitiesAlgebroCanonicalLaneLean.HironakaDesingularization
+import GlobalTheoryResolutionSingularitiesAlgebroCanonicalLaneLean.MonomialCenterSelection
+
+namespace HautevilleHouse
+namespace GlobalTheoryResolutionSingularitiesAlgebroCanonicalLaneLean
+
+def ConstrainedResolutionClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_resolution_endgame (A : AdmissibleClass) :
+    ConstrainedResolutionClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end GlobalTheoryResolutionSingularitiesAlgebroCanonicalLaneLean
+end HautevilleHouse
